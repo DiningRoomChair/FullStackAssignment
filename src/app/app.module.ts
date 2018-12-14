@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { RentalDetailsComponent } from './rental-details/rental-details.component';
 import { CustomersComponent } from './customers/customers.component';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CustomersComponent } from './customers/customers.component';
     AdminLoginComponent,
     AdminViewComponent,
     AdminEditComponent,
+    RentalDetailsComponent,
     CustomersComponent
   ],
   imports: [

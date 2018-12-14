@@ -21,7 +21,6 @@ export class VideoService {
   }
   
   rentVid(video): Observable<any> {
-    console.log('rentVid')
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
@@ -32,7 +31,6 @@ export class VideoService {
   }
     
   updateVid(video): Observable<any>{
-    console.log('updatevid');
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
