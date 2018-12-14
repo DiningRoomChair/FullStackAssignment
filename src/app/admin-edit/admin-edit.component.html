@@ -1,6 +1,6 @@
 <h4>Edit Video</h4>
 
-<form (submit)="editVideo($event, video$)" #form>
+<form (submit)="editVideo(video$, $event)" #form>
   <ul>  
     Title: <input type="text" value="{{video$.title}}"><br>
     Director: <input type="text" id="director" value="{{video$.director}}"><br>
