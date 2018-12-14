@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VideoService } from '../video.service';
 
 @Component({
   selector: 'app-admin-view',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminViewComponent implements OnInit {
 
-  constructor() { }
+  videos$: Object;
+
+  constructor(private videoservice: VideoService) { }
 
   ngOnInit() {
+    this.videoservice.getVids().subscribe(videoservice => this.videos$ = videoservice)
   }
 
 }

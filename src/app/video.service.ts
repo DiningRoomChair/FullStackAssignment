@@ -17,26 +17,28 @@ export class VideoService {
   }
   
   getVideoInfo(videoId) {
-    return this.http.get('http://localhost:3000/api/videos/' + videoId);
+    return this.http.get('http://localhost:3000/api/video_route/' + videoId);
   }
   
   rentVid(video): Observable<any> {
+    console.log('rentVid')
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
       })
     };
-    return this.http.put('http://localhost:3000/api/videos/' + video._id, JSON.stringify(video), httpOptions)
+    return this.http.put('http://localhost:3000/api/video_route/' + video._id, JSON.stringify(video), httpOptions)
     .pipe(tap( rentVideo => console.log(`updated video = ${JSON.stringify(rentVideo)} `)));
   }
     
   updateVid(video): Observable<any>{
+    console.log('updatevid');
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
       })
     };
-    return this.http.put('http://localhost:3000/api/videos/' + video._id, JSON.stringify(video), httpOptions)
+    return this.http.put('http://localhost:3000/api/video_route/' + video._id, JSON.stringify(video), httpOptions)
     .pipe(tap( updateVideo => console.log(`updated video = ${JSON.stringify(updateVideo)} `)));
   }
 
@@ -46,12 +48,12 @@ export class VideoService {
         'Content-Type':  'application/json'
       })
     };
-    return this.http.post('http://localhost:3000/api/videos/', JSON.stringify(video), httpOptions)
+    return this.http.post('http://localhost:3000/api/video_route/', JSON.stringify(video), httpOptions)
     .pipe(tap( createVideo => console.log(`updated video = ${JSON.stringify(createVideo)} `)));
   }
 
   deleteVid(video): Observable<any>{
-    return this.http.delete('http://localhost:3000/api/videos/' + video._id)
+    return this.http.delete('http://localhost:3000/api/video_route/' + video._id)
     .pipe(tap( deleteVideo => console.log(`deleted video = ${JSON.stringify(deleteVideo)} `)));
   }
 }

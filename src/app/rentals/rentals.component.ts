@@ -10,7 +10,6 @@ import { VideoService } from '../video.service';
 export class RentalsComponent implements OnInit {
 
   videos$: Object;
-  //private videoservice: VideoService
 
   constructor(private videoservice: VideoService) { }
 
