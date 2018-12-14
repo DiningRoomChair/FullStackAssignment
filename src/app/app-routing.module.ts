@@ -6,6 +6,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { CustomersComponent } from './customers/customers.component';
+import { viewAttached } from '@angular/core/src/render3/instructions';
 
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
     {
         path: 'admin-view/:id',
         component: AdminEditComponent
+    },
+    {
+        path: 'admin-view',
+        component: AdminViewComponent
     },
     {
         path:'rentals/:id',
