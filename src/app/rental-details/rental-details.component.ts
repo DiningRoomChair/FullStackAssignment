@@ -9,7 +9,7 @@ import { Video } from '../Video';
   selector: 'app-rental-details',
   templateUrl: './rental-details.component.html',
   styleUrls: ['./rental-details.component.css'],
-  providers: [CustomerDataService]
+  providers: [CustomerDataService, VideoService]
 })
 
 export class RentalDetailsComponent implements OnInit {
@@ -26,8 +26,9 @@ export class RentalDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.data.getVideoInfo(this.video$).subscribe(
-      data => this.video$ = data
-    );
+      data => {this.video$ = data;
+      console.log(data);
+    });
     this.customer.getUsers().subscribe(
       data => {
       this.customers$ = data;

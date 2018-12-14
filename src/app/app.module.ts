@@ -13,6 +13,7 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { RentalDetailsComponent } from './rental-details/rental-details.component';
 import { CustomersComponent } from './customers/customers.component';
+import { AdminAddComponent } from './admin-add/admin-add.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CustomersComponent } from './customers/customers.component';
     AdminViewComponent,
     AdminEditComponent,
     RentalDetailsComponent,
-    CustomersComponent
+    CustomersComponent,
+    AdminAddComponent
   ],
   imports: [
     BrowserModule,
