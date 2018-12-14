@@ -27,16 +27,16 @@ export class AdminEditComponent implements OnInit {
 
   editVideo(video, event){
     console.log('edit')
-    var target = event.target;
-    console.log(event.target.querySelector('#director'));
+    var tar = event.target;
+    console.log(event.tar.querySelector('#director'));
     const updatedVideo = {
       _id: video._id,
-      title: target.querySelector('#title').value,
-      rating: target.querySelector('#rating').value,
-      length: target.querySelector('#length').value,   
-      genre: target.querySelector('#genre').value,
-      status: target.querySelector('#status').value,
-      director: target.querySelector('#director').value,
+      title: tar.querySelector('#title').value,
+      rating: tar.querySelector('#rating').value,
+      length: tar.querySelector('#length').value,   
+      genre: tar.querySelector('#genre').value,
+      status: tar.querySelector('#status').value,
+      director: tar.querySelector('#director').value,
     };
     this.videoservice.updateVid(updatedVideo).subscribe(data => {console.log('edit')});
     this.router.navigate(['/admin-view']);

@@ -23,19 +23,18 @@ export class AdminAddComponent implements OnInit {
   }
 
   addVideo(event){
+    console.log('create');
     const tar = event.target;
     const newVideo = {
       title: tar.querySelector('#title').value,
       rating: tar.querySelector('#rating').value,
-      lenght: tar.querySelector('#length').value,
+      length: tar.querySelector('#length').value,
       genre: tar.querySelector('#genre').value,
-      rent: tar.querySelector('#status').value,
+      status: tar.querySelector('#status').value,
       director: tar.querySelector('#director').value
     };
-    this.videoservice.createVid(newVideo).subscribe(data => {
-      console.log('create function called');
-    });
-    this.router.navigate(['/admin-videos'])
+    this.videoservice.createVid(newVideo).subscribe(videoservice => {console.log('create function called'); })
+    //this.router.navigate(['/admin-videos'])
   }
 
 }

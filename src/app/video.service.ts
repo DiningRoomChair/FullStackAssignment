@@ -41,13 +41,14 @@ export class VideoService {
   }
 
   createVid(video): Observable<any>{
+    console.log('create attempt');
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
       })
     };
     return this.http.post('http://localhost:3000/api/video_route/', JSON.stringify(video), httpOptions)
-    .pipe(tap( createVideo => console.log(`updated video = ${JSON.stringify(createVideo)} `)));
+    .pipe(tap( createVideo => console.log(`created video = ${JSON.stringify(createVideo)} `)));
   }
 
   deleteVid(video): Observable<any>{

@@ -62,9 +62,9 @@ router.put('/:id', (req, res, next) => {
 });
 router.post('', (req, res, next) => {
   var video = req.body;
-  if(!video.title || !video.rating || !video.lenght /* dat typo doe */ || !video.genre){
+  if(!video.title || !video.rating || !video.length || !video.genre || ! video.director){
     res.status(400);
-    console.log('Bad Data for New Video  INSERT: Video by id: ');
+    console.log('Nope');
   }
   else{
     VideoModel.create(video);
