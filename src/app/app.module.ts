@@ -6,11 +6,17 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component';
 import { RentalsComponent } from './rentals/rentals.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RentalsComponent
+    RentalsComponent,
+    NavbarComponent,
+    AdminLoginComponent,
+    AdminViewComponent
   ],
   imports: [
     BrowserModule,
