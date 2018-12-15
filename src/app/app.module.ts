@@ -14,6 +14,7 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { RentalDetailsComponent } from './rental-details/rental-details.component';
 import { CustomersComponent } from './customers/customers.component';
 import { AdminAddComponent } from './admin-add/admin-add.component';
+import { AuthorizeGuard } from './authorize.guard'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { AdminAddComponent } from './admin-add/admin-add.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthorizeGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
