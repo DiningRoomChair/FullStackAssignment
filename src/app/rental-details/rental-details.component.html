@@ -1,16 +1,15 @@
 <h1> {{ video$.title }}</h1>
 
-<form (submit)="onRent(video$)" #form>
+<form (submit)="rentVid(video$)" #form>
   Director: {{video$.director}} <br>
   Rating: {{video$.rating}} <br>
   Length: {{video$.length}} <br>
   Genre: {{video$.genre}} <br>
   Status: {{video$.status}} <br>
-  <!--Customers:
-    <select [(ngModel)]="rentObject$" name='rentObject$' >
-      <option  *ngFor="let customer of customers$" [ngValue]="customer">{{customer.firstName}} {{customer.lastName}} </option>
-    </select>
-  -->
+  Customer:
+  <select [(ngModel)]="rent$" name='rent$' >
+    <option  *ngFor="let customer of customers$" [ngValue]="customer">{{customer.email}} </option>
+  </select><br>
   <button>Rent</button><br>
   <a routerLink="/">Back</a>
 </form>

@@ -17,7 +17,7 @@ export class RentalDetailsComponent implements OnInit {
   video$: Object;
   customers$;
   videos: Video[];
-  rentObject$: Object;
+  rent$: Object;
 
   constructor( private data: VideoService, private route: ActivatedRoute,
      private customer: CustomerDataService, private router: Router ) {
@@ -36,25 +36,19 @@ export class RentalDetailsComponent implements OnInit {
     });
   }
 
-  onRent(video) {
+  rentVid(video) {
     const _video = {
       _id: video._id,
       title: video.title,
       rating: video.rating,
       length: video.length,   
       genre: video.genre,
-      rent: 'not available'
+      status: 'false',
+      director: video.director
     };
-    this.data.rentVid(_video).subscribe(data => {
-      video.rent = 'not available';
-      console.log('on rent function called');
-      this.refresh();
+    this.data.rentVid(video).subscribe(data => {
+      this.router.navigate(['/']);
      });
-  }
-
-  refresh() {
-    this.router.navigate(['/']);
-    this.ngOnInit();
   }
 }
 

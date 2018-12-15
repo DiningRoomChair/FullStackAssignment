@@ -42,7 +42,7 @@ router.put('/:id', (req, res, next) => {
     editedVid.genre = video.genre;
   }
   if(video.status){
-    editedVid.rent = video.rent;
+    editedVid.status = video.status;
   }
   if(video.director){
     editedVid.director = video.director;

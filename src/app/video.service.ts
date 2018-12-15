@@ -27,7 +27,7 @@ export class VideoService {
       })
     };
     return this.http.put('http://localhost:3000/api/video_route/' + video._id, JSON.stringify(video), httpOptions)
-    .pipe(tap( rentVideo => console.log(`updated video = ${JSON.stringify(rentVideo)} `)));
+    .pipe(tap( rentVideo => console.log(`rent video = ${JSON.stringify(rentVideo)} `)));
   }
     
   updateVid(video): Observable<any>{
