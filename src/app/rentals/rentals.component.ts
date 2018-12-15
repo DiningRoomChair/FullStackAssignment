@@ -14,6 +14,6 @@ export class RentalsComponent implements OnInit {
   constructor(private videoservice: VideoService) { }
 
   ngOnInit() {
-    this.videoservice.getVids().subscribe(videoservice => this.videos$ = videoservice)
+    this.videoservice.getVids().subscribe(videoservice => {this.videos$ = videoservice})
   }
 }

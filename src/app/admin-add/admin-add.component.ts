@@ -34,7 +34,7 @@ export class AdminAddComponent implements OnInit {
       director: tar.querySelector('#director').value
     };
     this.videoservice.createVid(newVideo).subscribe(videoservice => {console.log('create function called'); })
-    this.router.navigate(['/admin-videos'])
+    this.router.navigate(['/admin-view'])
   }
 
 }

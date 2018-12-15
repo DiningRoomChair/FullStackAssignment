@@ -15,14 +15,13 @@
   <tr *ngFor="let video of videos$">
     <td>{{video.title}}</td>
     <td>{{video.director}}</td>
-    <td>{{video.rating}}
-    </td>
+    <td>{{video.rating}}</td>
     <td>  {{video.length}}</td>
     <td>  {{video.genre}}</td>
     <td>  {{video.rent}}</td>
     <td><a routerLink="/admin-view/{{video._id}}" >Edit</a></td>
-    <td><form (submit)="onDelete(video)" #form>
-      <button >Delete</button>
+    <td><form (submit)="deleteVid(video)" #form>
+      <input type="submit" value="Delete">
     </form></td>
   </tr>
 </table>
